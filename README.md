@@ -1,18 +1,7 @@
-# Plugin Template for AliucordRN
+# AliucordRN Plugins
 
-This template uses typescript and the pnpm package manager
+### [Experiments](https://github.com/janisslsm/AliucordRN-Plugins/raw/builds/Experiments.zip)
+Shows hidden Experiments tab
 
-Make a copy of this template, clone it and run `pnpm install`
-
-## Building plugins
-
-Build Plugin:
-```sh
-pnpm build TokenLogger
-```
-
-Watch for changes and auto compile & deploy* :
-```sh
-pnpm watch TokenLogger
-```
-\* Requires adb installed and to be connected to your phone
+### [FreeNitro](https://github.com/janisslsm/AliucordRN-Plugins/raw/builds/FreeNitro.zip)
+Send emotes without having nitro
