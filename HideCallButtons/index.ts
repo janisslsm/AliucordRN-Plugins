@@ -1,5 +1,5 @@
 import { Plugin } from 'aliucord/entities';
-import { getByName, Styles } from 'aliucord/metro';
+import { getModule } from 'aliucord/metro';
 import { after } from "aliucord/utils/patcher";
 
 type FilterOptions = {
@@ -11,9 +11,13 @@ type FilterOptions = {
 };
 
 export default class HideCallButtons extends Plugin {
+    private getByName(defaultName: string, options?: FilterOptions) {
+        return getModule(m => m?.default?.name === defaultName, options);
+    }
+
     public async start() {
-        const UserProfileHeader = getByName("UserProfileHeader");
-        const UserProfileActions = getByName("UserProfileActions");
+        const UserProfileHeader = this.getByName("UserProfileHeader");
+        const UserProfileActions = this.getByName("UserProfileActions");
 
         after(UserProfileHeader, "default", (ctx, component) => {
             const { props } = component;

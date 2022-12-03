@@ -1,6 +1,6 @@
 import { Plugin } from 'aliucord/entities';
 import { getByProps } from 'aliucord/metro';
-import { after, before, callOriginal } from "aliucord/utils/patcher";
+import { after, before } from "aliucord/utils/patcher";
 
 const [{ getEmojiURL }, usability, { getChannel }, Messages] = [
     getByProps('getEmojiURL'),
@@ -30,10 +30,8 @@ export default class FreeNitro extends Plugin {
         after(usability, 'canUseAnimatedEmojis', (ctx) => ctx.result = true);
         before(Messages, 'sendMessage', (ctx) => {
             const [channelId, message] = ctx.args;
-            this.logger.info(ctx);
             const channel = getChannel(channelId);
             message.validNonShortcutEmojis.forEach((e: Emoji, i: number) => {
-                this.logger.info(channel);
                 if (e.guildId !== channel.guild_id || e.animated) {
                     message.content = message.content.replace(
                         `<${e.animated ? "a" : ""}:${e.originalName ?? e.name}:${e.id}>`,
