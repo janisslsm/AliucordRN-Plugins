@@ -6,7 +6,7 @@ specifiers:
   '@types/node': ^17.0.31
   '@types/react': ^18.0.8
   '@types/react-native': ^0.67.6
-  aliucord: file:../AliucordRN/lib
+  aliucord: ^0.1.0
   hermes-engine: 0.11.0
   rollup: ^2.71.1
   tslib: ^2.4.0
@@ -18,23 +18,13 @@ devDependencies:
   '@types/node': 17.0.31
   '@types/react': 18.0.9
   '@types/react-native': 0.67.6
-  aliucord: file:../AliucordRN/lib
+  aliucord: 0.1.0
   hermes-engine: 0.11.0
   rollup: 2.72.1
   tslib: 2.4.0
   typescript: 4.6.4
 
 packages:
-
-  /@aliucord/react-devtools-core/4.24.4-aliucord.1:
-    resolution: {integrity: sha512-TtGzq5FP55BrPnJMqbG7iWNrjhtqvUgMsYVtuwslmONQEkFvxwEJSrsI+EXJMBEinOwyf3AP3HUYQhItjduxuw==}
-    dependencies:
-      shell-quote: 1.7.4
-      ws: 7.5.9
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
-    dev: true
 
   /@aliucord/rollup-plugin-swc/0.2.2_sfe26lxdk34xllfqp6wphh67ze:
     resolution: {integrity: sha512-P1QuH3XwjYxj4lOpDbCHSPHETF9qi0XRBAkuI1tdqW/shf9Q+gOzi7QtbK4dNoaklH4d9chQCJMqcMya80eeDg==}
@@ -233,12 +223,6 @@ packages:
       '@swc/core-win32-x64-msvc': 1.2.181
     dev: true
 
-  /@swc/helpers/0.3.17:
-    resolution: {integrity: sha512-tb7Iu+oZ+zWJZ3HJqwx8oNwSDIU440hmVMDPhpACWQWnrZHK99Bxs70gT1L2dnr5Hg50ZRWEFkQCAnOVVV0z1Q==}
-    dependencies:
-      tslib: 2.4.0
-    dev: true
-
   /@types/estree/0.0.39:
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
     dev: true
@@ -267,6 +251,15 @@ packages:
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
+    dev: true
+
+  /aliucord/0.1.0:
+    resolution: {integrity: sha512-HKeMjiKoKyLyJZJjYm2z2BliSdowGg7ngstcp62mIe86qyj4wfqSd0pr3vh3ouKn+Vj6AXSXFrOUE/AT5IbUXw==}
+    dependencies:
+      react-devtools-core: 4.27.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
     dev: true
 
   /buffer-crc32/0.2.13:
@@ -321,6 +314,16 @@ packages:
   /picomatch/2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
+    dev: true
+
+  /react-devtools-core/4.27.0:
+    resolution: {integrity: sha512-9dfVBf/9yquz5deUUCi9kA/JA4+2MTUxfKRv6IqizR0B26/28CxJedXb0kXtPD/cRKce8ecU1KhfJiDzUkOOaQ==}
+    dependencies:
+      shell-quote: 1.7.4
+      ws: 7.5.9
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
     dev: true
 
   /resolve/1.22.0:
@@ -384,16 +387,4 @@ packages:
     resolution: {integrity: sha512-phENi2PLiHnHb6QBVot+dJnaAZ0xosj7p3fWl+znIjBDlnMI2PsZCJZ306BPTFOaHf5qdDEI8x5qFrSOBN5vrw==}
     dependencies:
       buffer-crc32: 0.2.13
-    dev: true
-
-  file:../AliucordRN/lib:
-    resolution: {directory: ../AliucordRN/lib, type: directory}
-    name: aliucord
-    version: 0.1.1
-    dependencies:
-      '@aliucord/react-devtools-core': 4.24.4-aliucord.1
-      '@swc/helpers': 0.3.17
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
     dev: true
