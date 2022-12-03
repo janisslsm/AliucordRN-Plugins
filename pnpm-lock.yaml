@@ -6,7 +6,7 @@ specifiers:
   '@types/node': ^17.0.31
   '@types/react': ^18.0.8
   '@types/react-native': ^0.67.6
-  aliucord: ^0.1.0
+  aliucord: file:../AliucordRN/lib
   hermes-engine: 0.11.0
   rollup: ^2.71.1
   tslib: ^2.4.0
@@ -18,13 +18,23 @@ devDependencies:
   '@types/node': 17.0.31
   '@types/react': 18.0.9
   '@types/react-native': 0.67.6
-  aliucord: 0.1.0
+  aliucord: file:../AliucordRN/lib
   hermes-engine: 0.11.0
   rollup: 2.72.1
   tslib: 2.4.0
   typescript: 4.6.4
 
 packages:
+
+  /@aliucord/react-devtools-core/4.24.4-aliucord.1:
+    resolution: {integrity: sha512-TtGzq5FP55BrPnJMqbG7iWNrjhtqvUgMsYVtuwslmONQEkFvxwEJSrsI+EXJMBEinOwyf3AP3HUYQhItjduxuw==}
+    dependencies:
+      shell-quote: 1.7.4
+      ws: 7.5.9
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+    dev: true
 
   /@aliucord/rollup-plugin-swc/0.2.2_sfe26lxdk34xllfqp6wphh67ze:
     resolution: {integrity: sha512-P1QuH3XwjYxj4lOpDbCHSPHETF9qi0XRBAkuI1tdqW/shf9Q+gOzi7QtbK4dNoaklH4d9chQCJMqcMya80eeDg==}
@@ -223,6 +233,12 @@ packages:
       '@swc/core-win32-x64-msvc': 1.2.181
     dev: true
 
+  /@swc/helpers/0.3.17:
+    resolution: {integrity: sha512-tb7Iu+oZ+zWJZ3HJqwx8oNwSDIU440hmVMDPhpACWQWnrZHK99Bxs70gT1L2dnr5Hg50ZRWEFkQCAnOVVV0z1Q==}
+    dependencies:
+      tslib: 2.4.0
+    dev: true
+
   /@types/estree/0.0.39:
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
     dev: true
@@ -251,15 +267,6 @@ packages:
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
-    dev: true
-
-  /aliucord/0.1.0:
-    resolution: {integrity: sha512-HKeMjiKoKyLyJZJjYm2z2BliSdowGg7ngstcp62mIe86qyj4wfqSd0pr3vh3ouKn+Vj6AXSXFrOUE/AT5IbUXw==}
-    dependencies:
-      react-devtools-core: 4.24.5
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
     dev: true
 
   /buffer-crc32/0.2.13:
@@ -316,16 +323,6 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  /react-devtools-core/4.24.5:
-    resolution: {integrity: sha512-zr1LbHB5N5XjSNSCbxbfDNW8vryQdt2zYs8qnk5YacvFcwrMXGGXYoQ4gdu0rKe4mB/5MQYwgFse6IlyQiZwVw==}
-    dependencies:
-      shell-quote: 1.7.3
-      ws: 7.5.7
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
-    dev: true
-
   /resolve/1.22.0:
     resolution: {integrity: sha512-Hhtrw0nLeSrFQ7phPp4OOcVjLPIeMnRlr5mcnVuMe7M/7eBn98A3hmFRLoFo3DLZkivSYwhRUJTyPyWAk56WLw==}
     hasBin: true
@@ -351,8 +348,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /shell-quote/1.7.3:
-    resolution: {integrity: sha512-Vpfqwm4EnqGdlsBFNmHhxhElJYrdfcxPThu+ryKS5J8L/fhAwLazFZtq+S+TWZ9ANj2piSQLGj6NQg+lKPmxrw==}
+  /shell-quote/1.7.4:
+    resolution: {integrity: sha512-8o/QEhSSRb1a5i7TFR0iM4G16Z0vYB2OQVs4G3aAFXjn3T6yEx8AZxy1PgDF7I00LZHYA3WxaSYIf5e5sAX8Rw==}
     dev: true
 
   /supports-preserve-symlinks-flag/1.0.0:
@@ -370,8 +367,8 @@ packages:
     hasBin: true
     dev: true
 
-  /ws/7.5.7:
-    resolution: {integrity: sha512-KMvVuFzpKBuiIXW3E4u3mySRO2/mCHSyZDJQM5NQ9Q9KHWHWh0NHgfbRMLLrceUK5qAL4ytALJbpRMjixFZh8A==}
+  /ws/7.5.9:
+    resolution: {integrity: sha512-F+P9Jil7UiSKSkppIiD94dN07AwvFixvLIj1Og1Rl9GGMuNipJnV9JzjD6XuqmAeiswGvUmNLjr5cFuXwNS77Q==}
     engines: {node: '>=8.3.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -387,4 +384,16 @@ packages:
     resolution: {integrity: sha512-phENi2PLiHnHb6QBVot+dJnaAZ0xosj7p3fWl+znIjBDlnMI2PsZCJZ306BPTFOaHf5qdDEI8x5qFrSOBN5vrw==}
     dependencies:
       buffer-crc32: 0.2.13
+    dev: true
+
+  file:../AliucordRN/lib:
+    resolution: {directory: ../AliucordRN/lib, type: directory}
+    name: aliucord
+    version: 0.1.1
+    dependencies:
+      '@aliucord/react-devtools-core': 4.24.4-aliucord.1
+      '@swc/helpers': 0.3.17
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
     dev: true

@@ -6,3 +6,6 @@ Shows hidden Experiments tab
 
 ### [FreeNitro](https://github.com/janisslsm/AliucordRN-Plugins/raw/builds/FreeNitro.zip)
 Send emotes without having nitro
+
+### [HideCallButtons](https://github.com/janisslsm/AliucordRN-Plugins/raw/builds/HideCallButtons.zip)
+Hides call buttons in the user popout menu.

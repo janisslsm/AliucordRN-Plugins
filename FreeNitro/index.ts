@@ -10,16 +10,18 @@ const [{ getEmojiURL }, usability, { getChannel }, Messages] = [
 ];
 
 type Emoji = {
-    roles: any[];
-    require_colons: boolean;
-    name: string;
-    managed: boolean;
-    id: string;
-    available: boolean;
-    animated: boolean;
-    url: string;
-    allNamesString: string;
-    guildId: string;
+    roles: any[],
+    require_colons: boolean,
+    name: string,
+    originalName?: string,
+    managed: boolean,
+    id: string,
+    available: boolean,
+    animated: boolean,
+    url: string,
+    allNamesString: string,
+    guildId: string,
+    size: number
 };
 
 export default class FreeNitro extends Plugin {
@@ -28,14 +30,14 @@ export default class FreeNitro extends Plugin {
         after(usability, 'canUseAnimatedEmojis', (ctx) => ctx.result = true);
         before(Messages, 'sendMessage', (ctx) => {
             const [channelId, message] = ctx.args;
-
+            this.logger.info(ctx);
             const channel = getChannel(channelId);
             message.validNonShortcutEmojis.forEach((e: Emoji, i: number) => {
-                if (e.guildId !== channel.guildId) {
-                    let url = getEmojiURL(e).replace('webp', 'png');
+                this.logger.info(channel);
+                if (e.guildId !== channel.guild_id || e.animated) {
                     message.content = message.content.replace(
-                        `<${e.animated ? 'a' : ''}:${e.name}:${e.id}>`,
-                        url.substring(0, url.indexOf('?size=') + '?size='.length) + "48",
+                        `<${e.animated ? "a" : ""}:${e.originalName ?? e.name}:${e.id}>`,
+                        e.url.replace("webp", "png").replace(/size=\d+/, "size=48")
                     );
                     delete message.validNonShortcutEmojis[i];
                 }
