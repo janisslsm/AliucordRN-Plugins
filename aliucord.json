@@ -1,5 +1,5 @@
 {
-    "buildCommand": "pnpm i --frozen-lockfile && mkdir dist && pnpm buildAll",
+    "buildCommand": "pnpm i --frozen-lockfile && pnpm buildAll",
     "distFolder": "./dist",
     "ignoredPlugins": []
 }
