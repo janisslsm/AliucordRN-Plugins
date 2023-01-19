@@ -1,5 +1,5 @@
 {
-    "buildCommand": "pnpm i --frozen-lockfile && pnpm buildAll",
+    "buildCommand": "pnpm i --frozen-lockfile && pnpm build Experiments && pnpm build FreeNitro && pnpm build HideCallButtons",
     "distFolder": "./dist",
     "ignoredPlugins": []
 }
