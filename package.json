@@ -15,7 +15,7 @@
     "@types/react-native": "^0.67.6",
     "aliucord": "^0.1.0",
     "@aliucord/rollup-plugin": "^1.0.2",
-    "hermes-engine": "0.11.0",
+    "hermes-engine": "npm:hermes-engine-cli@^0.12.0",
     "rollup": "^2.71.1",
     "tslib": "^2.4.0",
     "typescript": "^4.6.4"
