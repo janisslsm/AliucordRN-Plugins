@@ -29,22 +29,13 @@ jobs:
                     node build.mjs "$plugin"
                   done
 
-            - name: Upload dist folder as artifact
-              uses: actions/upload-artifact@v3
-              if: github.ref != format('refs/heads/{0}', github.event.repository.default_branch) # Only runs if this CI was not triggered by the default branch
-              with:
-                  name: dist
-                  path: dist/*.{zip,json}
-
             - name: Checkout builds
-              if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch) # Only runs if this CI was triggered by the default branch
               uses: actions/checkout@master
               with:
                   ref: "builds"
                   path: "builds"
 
             - name: Push builds
-              if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch) # Only runs if this CI was triggered by the default branch
               run: |
                   rm $GITHUB_WORKSPACE/builds/* || true # clean previous builds
                   cp dist/*.{zip,json} $GITHUB_WORKSPACE/builds
