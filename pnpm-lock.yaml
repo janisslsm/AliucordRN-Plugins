@@ -7,19 +7,19 @@ specifiers:
   '@types/react': ^18.0.8
   '@types/react-native': ^0.67.6
   aliucord: ^0.1.0
-  hermes-engine: 0.11.0
+  hermes-engine: npm:hermes-engine-cli@^0.12.0
   rollup: ^2.71.1
   tslib: ^2.4.0
   typescript: ^4.6.4
 
 devDependencies:
-  '@aliucord/rollup-plugin': 1.0.2_ckrhg2l27mbc2k3ahkqtxllktu
+  '@aliucord/rollup-plugin': 1.0.2_nyqe4zvy7mnu43tjkrxwr7xm5a
   '@rollup/plugin-typescript': 8.3.2_dsrqihoegvzgycupzno43pt4sq
   '@types/node': 17.0.31
   '@types/react': 18.0.9
   '@types/react-native': 0.67.6
   aliucord: 0.1.0
-  hermes-engine: 0.11.0
+  hermes-engine: /hermes-engine-cli/0.12.0
   rollup: 2.72.1
   tslib: 2.4.0
   typescript: 4.6.4
@@ -37,15 +37,15 @@ packages:
       rollup: 2.72.1
     dev: true
 
-  /@aliucord/rollup-plugin/1.0.2_ckrhg2l27mbc2k3ahkqtxllktu:
+  /@aliucord/rollup-plugin/1.0.2_nyqe4zvy7mnu43tjkrxwr7xm5a:
     resolution: {integrity: sha512-1EQZmrxC4bE0K4HTiqI8XWBnVcw8ncB6VfqUkWhn3IUzvU0RUmHJFfJJ5A+8hWs/bUqEbMosNePeSwCnOkQQ+g==}
     peerDependencies:
       hermes-engine: ^0.11.0
     dependencies:
       '@aliucord/rollup-plugin-swc': 0.2.2_sfe26lxdk34xllfqp6wphh67ze
       '@swc/core': 1.2.181
-      hermes-engine: 0.11.0
-      rollup-plugin-hermes: 1.0.1_hermes-engine@0.11.0
+      hermes-engine: /hermes-engine-cli/0.12.0
+      rollup-plugin-hermes: 1.0.1_hermes-engine-cli@0.12.0
       yazl: 2.5.1
     transitivePeerDependencies:
       - rollup
@@ -297,8 +297,8 @@ packages:
       function-bind: 1.1.1
     dev: true
 
-  /hermes-engine/0.11.0:
-    resolution: {integrity: sha512-7aMUlZja2IyLYAcZ69NBnwJAR5ZOYlSllj0oMpx08a8HzxHOys0eKCzfphrf6D0vX1JGO1QQvVsQKe6TkYherw==}
+  /hermes-engine-cli/0.12.0:
+    resolution: {integrity: sha512-72a5yvwSC2qWtxJ80nlcoCCfNTkpYI8VVAfOro4FL9O105NM8Vpigz/A5Nq1rECKdP7M1N81HHiYL6jU5N1gYw==}
     dev: true
 
   /is-core-module/2.9.0:
@@ -335,12 +335,12 @@ packages:
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
 
-  /rollup-plugin-hermes/1.0.1_hermes-engine@0.11.0:
+  /rollup-plugin-hermes/1.0.1_hermes-engine-cli@0.12.0:
     resolution: {integrity: sha512-JV+steSAPzx/aQ9cn1O9RFcxZjujWiClVuDboUlAmDaNAojM4w/RUuRG/rgVyLSEfknZcJHTyCmwvj/+mWBlIQ==}
     peerDependencies:
       hermes-engine: 0.x
     dependencies:
-      hermes-engine: 0.11.0
+      hermes-engine: /hermes-engine-cli/0.12.0
     dev: true
 
   /rollup/2.72.1:
