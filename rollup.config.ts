@@ -9,7 +9,7 @@ export default defineConfig({
     plugins: [
         aliucordPlugin({
             autoDeploy: !!process.env.ROLLUP_WATCH,
-            hermesPath: "node_modules/.pnpm/hermes-engine-cli@0.12.0/node_modules/hermes-engine-cli"
+            hermesPath: "node_modules/.pnpm/@aliucord+hermesc@0.70.6-aliucord-2/node_modules/@aliucord/hermesc"
         }),
         makeManifest({
             baseManifest: "baseManifest.json",
@@ -18,3 +18,4 @@ export default defineConfig({
         makePluginZip()
     ]
 });
+//node_modules\.pnpm\@aliucord+hermesc@0.70.6-aliucord-2\node_modules\@aliucord\hermesc\win64-bin
